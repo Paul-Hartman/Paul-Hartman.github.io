@@ -1,18 +1,36 @@
 
 /*===========General Styles==========*/
+
+html {
+    scroll-behavior: smooth;
+    background-color: black;
+}
+
 body {
     margin: 0%;
+    opacity: 1;
+    transition: 3s opacity;
+    letter-spacing: .2vw;
+    font-family: monospace 'Courier New', Courier, monospace;
+    font-size: 1.5vw;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+body.fade-out {
+    opacity: 0.1;
 }
 
 h1  {
     text-transform: uppercase;
     font-family: monospace 'Courier New', Courier, monospace;
     text-align: center;
-    margin-top: 1%;
+    margin-top: 3%;
     color: black;
 }
 
 h1:hover {
+    
    text-shadow: 2px 2px 2px chartreuse;
     transform: scale(1.1);
     transition: transform 1s;
@@ -21,15 +39,16 @@ h1:hover {
 
 .white-text {
     color: white;
+    padding-top: 10vh;
 }
 
 p {
     font-family: 'Courier New', Courier, monospace bold;
     text-align: justify;
-    letter-spacing: 1px;
-    font-size: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
 p:hover  {
@@ -41,11 +60,18 @@ p:hover  {
     text-align: center;
 }
 
+.center:hover {
+    transition: transform 2s;
+    transform: scale(1.1);
+}
+
 
 
 
 a {
     color: black;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 
@@ -54,17 +80,18 @@ q  {
 }
 
 img {
+
     border-radius: 8px;
     max-width: 100%;
-    height: 340px;
+    height: 100%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto auto auto auto;
 }
 
 img:hover {
+    filter: invert(75%);
     transition: transform 1s;
-    transform: scale(1.1);
+    transform: scale(1.02);
     box-shadow: 0 0 10px chartreuse;
 }
 
@@ -76,7 +103,7 @@ img:hover {
 }
 
 footer  {
-    padding: 1px;
+    padding: 2%;
     background-color: black;
     color: chartreuse;
     text-align: center;
@@ -98,7 +125,7 @@ footer  {
 }
 
 @keyframes moveNav  {
-    from{left: 100vw}
+    from{left: -100vw}
     to{right:0vw }
 }
 
@@ -107,14 +134,14 @@ footer  {
     float: left;
     display: block;
     color: white;
-    padding: 14px 16px;
+    padding: .75vw 1vw;
     text-decoration: none;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
+    font-size: 1.5vw;
     text-align: center;
     position: relative;
-    -webkit-animation: moveNavText 5.75s;
-    animation: moveNavText 5.75s;
+    -webkit-animation: moveNavText 3s;
+    animation: moveNavText 3s;
 }
 
 @keyframes moveNavText  {
@@ -124,7 +151,7 @@ footer  {
 
 @media screen and (max-width: 576px) {
     .navbar a {
-        width: 25%;
+        width: 20%;
         font-size: 12px;
     }
 }
@@ -133,6 +160,7 @@ footer  {
     background-color: white;
     color: black;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .navbar a.active  {
@@ -147,14 +175,15 @@ footer  {
 #Video {
     position: fixed;
     right: 0;
-    bottom: 0;
+    top: 0;
     min-width: 100%;
+    max-width: 750px;
     z-index: -1;
-    max-width: 100%;
+
 }
 
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 576px) {
     #Video {
         display: none;
     }
@@ -165,10 +194,11 @@ footer  {
     background: rgba(0, 0, 0, 0.5);
     color: white;
     width: 100%;
-    padding: 20px;
+    height: 100vh;
+    padding: 2vh;
     position: relative;
-    -webkit-animation: moveVideoText 5.75s;
-    animation: moveVideoText 5.75s;
+    -webkit-animation: moveVideoText 3s;
+    animation: moveVideoText 3s;
 
 }
 
@@ -178,16 +208,113 @@ footer  {
 }
 /*******END OF VIDEO STYLING*******/
 
+/*******Slideshow Styling*********/
+#Slideshow_Background {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.mySlides {
+    display: none;
+}
+
+#Slideshow_Container {
+    width: 39.5vw;
+    height: auto;
+    padding-top: 4%;
+    position: relative;
+    margin: auto;
+}
+
+.Slideshow_Images {
+    vertical-align: middle;
+    height: auto;
+    box-shadow: 0px 5px 10px 12px rgba(127, 255, 0, .75) ;
+    width: 100%;
+}
+
+.Previous, .Next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 2vw;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6 ease;
+}
+
+.Next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.Previous:hover, .Next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.text {
+    color: white;
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace bold;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    background-color: rgba(0, 0, 0, 0.75);
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    z-index: 1;
+}
+
+.active, .dot:hover {
+    background-color: chartreuse;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+@keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
 
 /********TABLE STYLING***********/
 * {
     box-sizing: border-box;
+
 }
 
 .column_1  {
     float: left;
     width: 50%;
-    padding: 10px;
+    padding: 1.6%;
     padding-top: 3%;
     height: 400px;
     background-color:chartreuse;
@@ -203,7 +330,7 @@ footer  {
 .column_2  {
     float: left;
     width: 50%;
-    padding: 10px;
+    padding: 1.6%;
     padding-top: 1.9%;
     height: 400px;
     background-color: black;
@@ -224,43 +351,99 @@ footer  {
 
 /**********CONTACT FORM STYLING*********/
 
-input[type=text]  {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-    font-family: 'Courier New', Courier, monospace bold;
-}
-
-input[type=text]:hover  {
-    box-shadow: 0  0  5px  rgb(53, 192, 127)  inset;
-}
-
-input[type=submit] {
+.Pop_Up_Button {
+    position: fixed;
+    bottom: 1.75vw;
+    right: 1.75vw;
+    width: 25vw;
     background-color: black;
     color: white;
-    font-weight: bold;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
+    border: outset chartreuse ;
     cursor: pointer;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Courier New', Courier, monospace bold;
+    -webkit-animation: movePopup 5s;
+    animation: movePopup 5s;
 }
 
-input[type=submit]:hover {
-    background-color: chartreuse;
-    color: black;
-    transform: scale(1.2);
-    transition: transform 1.5s;
-    box-shadow: 0  0 10px  black;
+@keyframes movePopup {
+    from {right: -40vw;}
+    to {right: 1.75vw;}
 }
+
+@-webkit-keyframes movePopup {
+     from {right: -40vw;}
+    to {right: 1.75vw;}
+}
+
+.form-popup {
+    border: 3px solid chartreuse;
+    z-index: 8;
+    background-color: black;
+    display: none;
+    position: fixed;
+    bottom: .5vw;
+    right: .5vw;
+}
+
+.form-container {
+    max-width: 49vw;
+    padding: 1vw;
+    background-color: black;
+}
+
+ input[type=text] {
+    width: 100%;
+    padding: .93vw;
+    margin: .6vw 0 .6vw 0;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 3vw;
+    font-family: monospace 'Courier New', Courier, monospace;
+}
+
+button {
+    font-family: monospace 'Courier New', Courier, monospace;
+    letter-spacing: .3vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: 1.5vw;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+}
+
+button:hover, .form-container .btn:hover {
+    color: white;
+    background-color: chartreuse;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: chartreuse;
+}
+
+  .btn {
+    background-color: black;
+    color: white;
+    border: 3px outset;
+    border-color: black ;
+    margin-bottom: 1vh;
+}
+
+ .cancel {
+    background-color: black;
+    color: white;
+    border: 3px outset;
+    border-color: black;
+}
+
+ .cancel:hover {
+    color: black;
+    background-color: red;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: black;
+}
+
+
 
 
 /*****END OF CONTACT FORM STYLING******/

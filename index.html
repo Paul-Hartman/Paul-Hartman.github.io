@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,19 @@
     <title>Paul Hartman</title>
     <link rel="stylesheet" type="text/css" href="./stylesheet/MyPortfolio.css">
 </head>
+
 <body class="background">
     <div class="navbar">
         <a class="active" href="#Home">Home</a>
+        <a href="#Slideshow">Slideshow</a>
         <a href="#About">About</a>
         <a href="#GitHub">Github</a>
-        <a href="#Contact">Contact</a>
+        <a onclick="openForm()" ondblclick="closeForm()">Contact</a>
     </div>
 
     <br>
     <br>
-    
+
     <!--Video-->
     <div id="Home">
         <video autoplay muted loop id="Video">
@@ -27,45 +30,113 @@
 
     </div>
 
-     <!--Video Text-->
-     <div class="video-text">
-         <h1 class="white-text">Paul Hartman's Portfolio</h1>
-         <strong>
-             <p class="center">
-                 <q>
+    <!--Video Text-->
+    <div class="video-text">
+        <h1 class="white-text">Paul Hartman's Portfolio</h1>
+        <strong>
+            <p class="center">
+                <q>
                     The computer programmer is a creator of universes for which he alone is the lawgiver.
-                    <br>No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or
+                    <br>No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute
+                    authority to arrange a stage or
                     <br>field of battle and to command such unswervingly dutiful actors or troops.
-                 </q>
-                 <br> - -Joseph Weizenbaum
-                 <br>
-                 <br>My name is Paul Hartman. Welcome to my portfolio website. On it I will tell you about my background and experience.
-                 <br>
-                 <br> Thank you for stopping by and enjoy.
+                </q>
+                <br> - -Joseph Weizenbaum
+                <br>
+                <br>My name is Paul Hartman. Welcome to my portfolio website. On it I will tell you about my background
+                and experience.
+                <br>
+                <br> Thank you for stopping by and enjoy.
 
-                
-             </p>
-         </strong>
-     </div>
 
-     <!--About-->
-     <div class="row" id="About">
-         <!--Left Column-->
-         <div class="column_2">
-             <img src="./images/wormhole.png" alt="Oops">
-         </div>
-         <!--Right Column-->
-         <div class="column_1">
-             <h1>About</h1>
-             <p>
-                 I am a game developer who comes from and independent fashion background. 
-                 <br> I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>'s Game Development Boot Camp trained and experienced in the following web programming languages: HTML, CSS, JavaScript, SQL, C# and C++.
-                 <br>
-                 <br>I am a full stack developer with competency in Unreal Engine 4 &trade;, Houdini&trade;, and CLO&trade;. I would love to work on your project. <a href="#contact">Contact</a> me below.
 
-             </p>
-         </div>
-     </div>
+            </p>
+        </strong>
+    </div>
+
+    <!--Slideshow-->
+    <div id="Slideshow">
+        <div id="Slideshow_Background">
+            <div id="Slideshow_Container">
+
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./images/HTML_CSS_and_JavaScript.jpeg"
+                        alt="Photo did not display">
+                    <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,
+                    </div>
+                </div>
+
+
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./images/Python.png" alt="Photo did not display">
+                    <div class="text">Python, .NET Framework, ASP.NET, MVC,</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./images/C_Sharp_and_Dot_NET.png" alt="Photo did not display">
+                    <div class="text">C++, C#</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./images/unity.png" alt="Photo did not display">
+                    <div class="text">Unity</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./images/unreal Engine.png" alt="Photo did not display">
+                    <div class="text">Unreal Engine</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./images/SQL_and_Database.jpg" alt="Photo did not display">
+                    <div class="text">back end development, databases and SQL.</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./images/mail-icon-black.jpg" alt="Photo did not display">
+                    <div class="text"><a class="white-head" onclick="openForm()" href="#Contact"></a> Contact me!</div>
+                </div>
+
+                <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+
+            </div>
+            <br>
+
+            <!--Dots-->
+            <div style="text-align: center;">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+            </div>
+        </div>
+    </div>
+
+    <!--About-->
+    <div class="row" id="About">
+        <!--Left Column-->
+        <div class="column_2">
+            <img src="./images/wormhole.png" alt="Oops">
+        </div>
+        <!--Right Column-->
+        <div class="column_1">
+            <h1>About</h1>
+            <p>
+                I am a game developer who comes from and independent fashion background.
+                <br> I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech
+                    Academy</a>'s Game Development Boot Camp trained and experienced in the following web programming
+                languages: HTML, CSS, JavaScript, SQL, C# and C++.
+                <br>
+                <br>I am a full stack developer with competency in Unreal Engine 4 &trade;, Houdini&trade;, and
+                CLO&trade;. I would love to work on your project. <a href="#contact">Contact</a> me below.
+
+            </p>
+        </div>
+    </div>
 
     <!--Github Section-->
     <div class="Row" id="GitHub">
@@ -74,45 +145,48 @@
             <h1>GitHub</h1>
             <p class="center">
                 You can view my coding projects on my GitHub profile here:
-            <br>
-                <p class="center"> <a href="https://github.com/Paul-Hartman" target="_blank">Paul Hartman's GitHub</a></p>
-            
+                <br>
+            <p class="center"> <a href="https://github.com/Paul-Hartman" target="_blank">Paul Hartman's GitHub</a></p>
+
             </p>
         </div>
         <!--Right column-->
         <div class="column_2">
-            <a href="https://github.com/Paul-Hartman" target="_blank"> <img src="./images/Github1.png" alt="GitHub Logo"></a>
+            <a href="https://github.com/Paul-Hartman" target="_blank"> <img src="./images/Github1.png"
+                    alt="GitHub Logo"></a>
         </div>
     </div>
 
-
-    <!--Contact Section-->
-    <div class="Row" id="Contact">
-        <!--Contact Image, Left Column-->
-        <div class="column_2 column_tall" >
-            <img src="./images/future-2942885_1920.jpg" alt="Contact Image">
-        </div>
-        <!--Contact Form, Right Column-->
-        <div class="column_1 column_tall">
-            <h1>Contact</h1>
+    <!--Contact Form-->
+    <div id="Contact">
+        <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+        <div class="form-popup" id="myForm">
             <form action="https://formspree.io/f/mwkayjpa" method="POST">
-                <label>Name:</label>
-                    <input type="text" placeholder="Please enter your name here">
-                <label>Email:</label>
-                    <input type="text" id="Email" name="Email" placeholder="Please enter your Email here">
-                <label>Message:</label>
-                    <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                    <input type="submit" value="SUBMIT">
-             </form>
+                <label for="name">Name:</label>
+                <input type="text" placeholder="Please enter your name here" name="name" required>
+                <label for="email">Email:</label>
+                <input type="text" id="Email" name="Email" placeholder="Please enter your Email here" name="email"
+                    required>
+                <label for="message">Message:</label>
+                <input type="text" id="Message" name="Message" placeholder="Please write your message here">
+
+                <button type="submit" class="btn">SUBMIT</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+            </form>
         </div>
     </div>
+
+
 
     <!--Footer Section-->
     <footer>
-       
+        <p class="center">
+        <p>Thank you for visiting my portfolio website. &#128515; </p>
+        </p>
     </footer>
 
 
-    
+    <script src="./JS/Portfolio_Website.js"></script>
 </body>
+
 </html>
